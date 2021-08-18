@@ -42,7 +42,11 @@ public class MainActivity extends AppCompatActivity {
                  * ... this happens!
                  */
                 String name = enterName.getText().toString();
-                nameText.setText("Hello, " + name);
+                if (name.isEmpty()) {
+                    nameText.setText("You did not provide your name! :'O");
+                } else {
+                    nameText.setText("Hello, " + name);
+                }
             }
         });
     }
