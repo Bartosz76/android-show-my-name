@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private Button showButton;
     private TextView nameText;
+    private EditText enterName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
          */
         showButton = findViewById(R.id.button);
         nameText = findViewById(R.id.textView);
+        enterName = findViewById(R.id.editText);
 
         /**
          * Setting an "event listener" on my button.
@@ -38,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
                 /**
                  * ... this happens!
                  */
-                nameText.setText("Hello, Bartosz!");
+                String name = enterName.getText().toString();
+                nameText.setText("Hello, " + name);
             }
         });
     }
